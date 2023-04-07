@@ -73,7 +73,7 @@ public class GetApiController {
 	// http://localhost:8080/api/queryParam4?name=성희&age=10&email=a@naver.com
 	@GetMapping("/queryParam4")
 	// MessageConverter 동작해서 자동으로 파싱 처리
-	// @RequestParam 붙이지 말아야 한다.
+	// @RequestParam 붙이지 말아야 한다.  
 	// Dto 속성값이 없으면 파싱을 하지 않는다.
 	public String queryParam4(UserRequest userDto) {
 		System.out.println("Dto 방식 동작 처리");
@@ -107,6 +107,8 @@ public class GetApiController {
 	}
 	
 	// http://localhost:8080/api/name/성희
+	// DTO mapping은 @PathVariable 선언 없이 사용하자
+	// DTO 안에 mapping할 변수와 키 값이 같아야한다.
 	@GetMapping("/name/{userName}")
 	public UserRequest getUser(UserRequest dto) {
 		UserRequest userRequest = new UserRequest();

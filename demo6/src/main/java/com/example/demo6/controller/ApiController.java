@@ -44,7 +44,11 @@ public class ApiController {
 	// application/x-www-form-urlencoded
 	@GetMapping("/user2")
 	public User get2(@Validated User reqUser) {
-
 		return reqUser;
+	}
+
+	@GetMapping("/test")
+	public String test() {
+		return "TEST";
 	}
 }
